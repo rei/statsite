@@ -262,7 +262,7 @@ static int stream_formatter_bin(FILE *pipe, void *data, metric_type type, char *
                 STREAM_BIN(BIN_TYPE_COUNTER, BIN_OUT_MEAN, counter_mean(value));
             }
             if (counters_config->count) {
-                STREAM_BIN(BIN_TYPE_COUNTER, BIN_OUT_COUNT, counter_count(value));
+                STREAM_BIN(BIN_TYPE_COUNTER, BIN_OUT_COUNT, counter_sum(value));
             }
             if (counters_config->stdev) {
                 STREAM_BIN(BIN_TYPE_COUNTER, BIN_OUT_STDDEV, counter_stddev(value));
