@@ -117,7 +117,7 @@ static int stream_formatter(FILE *pipe, void *data, metric_type type, char *name
         case COUNTER:
             if (GLOBAL_CONFIG->extended_counters) {
                 if (counters_config->count) {
-                    STREAM("%s%s.count|%"PRIu64"|%lld\n", prefix, name, counter_count(value));
+                    STREAM("%s%s.count|%"PRIu64"|%lld\n", prefix, name, counter_sum(value));
                 }
                 if (counters_config->mean) {
                     STREAM("%s%s.mean|%f|%lld\n", prefix, name, counter_mean(value));
